@@ -8,13 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import br.com.franca.domain.Categoria;
 
 /**
  * Servlet implementation class HelloServlet
  */
 public class HelloServlet extends HttpServlet {
-
+	
+	private static Log LOG = LogFactory.getLog(HelloServlet.class);
+	
 	@Inject
 	private Categoria categoria;
 
@@ -36,8 +41,15 @@ public class HelloServlet extends HttpServlet {
 
 		this.categoria.setId(1);
 		this.categoria.setNome("Teste");
-
+		
 		System.out.println(this.categoria.toString());
+		
+		try {
+			throw new RuntimeException();	
+		} catch (Exception e) {
+			LOG.error("Ocorreu algum erro no servlet " + e.getMessage(), e);			
+		}
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
