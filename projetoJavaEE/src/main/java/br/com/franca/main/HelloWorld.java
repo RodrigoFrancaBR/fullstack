@@ -1,4 +1,4 @@
-package projetoJavaEE;
+package br.com.franca.main;
 
 public class HelloWorld {
 
