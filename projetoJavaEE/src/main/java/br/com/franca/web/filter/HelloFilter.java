@@ -37,6 +37,7 @@ public class HelloFilter implements Filter {
 		chain.doFilter(request, response);
 
 		long tempoFinal = System.currentTimeMillis();
+		
 		System.out.println(tempoFinal - tempoInicial);
 
 		// pass the request along the filter chain
