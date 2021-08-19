@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<!-- 
+	<display-name>projetoJavaEE</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>HelloServlet</display-name>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>br.com.franca.web.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/servlet</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>br.com.franca.web.listener.HelloListener</listener-class>
+	</listener>
+	<filter>
+		<display-name>HelloFilter</display-name>
+		<filter-name>HelloFilter</filter-name>
+		<filter-class>br.com.franca.web.filter.HelloFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HelloFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>	
+	 -->
+	 
+	 <listener>
+		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+	</listener>
+
+	<resource-env-ref>
+		<resource-env-ref-name>BeanManager</resource-env-ref-name>
+		<resource-env-ref-type>javax.enterprise.inject.spi.BeanManager</resource-env-ref-type>
+	</resource-env-ref>
+</web-app>
