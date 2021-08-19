@@ -13,13 +13,13 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-
+<!-- 
 		<dependency>
 			<groupId>br.com.franca</groupId>
 			<artifactId>domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+ -->
 		<dependency>
 			<groupId>br.com.franca</groupId>
 			<artifactId>repository</artifactId>

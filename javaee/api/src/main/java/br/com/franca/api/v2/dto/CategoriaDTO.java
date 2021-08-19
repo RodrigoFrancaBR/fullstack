@@ -1,4 +1,4 @@
-package br.com.franca.api.v1.dto;
+package br.com.franca.api.v2.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,9 +10,7 @@ public class CategoriaDTO {
 
 	private Integer id;
 	private String nome;
-
-	public CategoriaDTO() {
-	}
+	private String novoAtributo = "VALOR";
 
 	public Integer getId() {
 		return id;
@@ -28,6 +26,14 @@ public class CategoriaDTO {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getNovoAtributo() {
+		return novoAtributo;
+	}
+
+	public void setNovoAtributo(String novoAtributo) {
+		this.novoAtributo = novoAtributo;
 	}
 
 }

@@ -11,10 +11,9 @@ import javax.ws.rs.core.MediaType;
 import br.com.franca.api.v1.dto.CategoriaDTO;
 
 @Path("/categorias")
-//@Consumes({"application/vnd.blog.v1+xml", "application/vnd.blog.v1+json"})
-//@Produces({"application/vnd.blog.v1+xml", "application/vnd.blog.v1+json"})
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+
+@Consumes({"application/categorias.v1+xml", "application/categorias.v1+json"})
+@Produces({"application/categorias.v1+xml", "application/categorias.v1+json"})
 public interface CategoriaResource {
 
 	@GET

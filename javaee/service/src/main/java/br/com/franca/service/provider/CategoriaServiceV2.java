@@ -7,19 +7,17 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.franca.api.v1.dto.CategoriaDTO;
-import br.com.franca.api.v1.resources.CategoriaResource;
+import br.com.franca.api.v2.dto.CategoriaDTO;
+import br.com.franca.api.v2.resources.CategoriaResource;
 import br.com.franca.repository.CategoriaRepository;
 import br.com.franca.service.domain.CategoriaDomain;
 
 @Named
 @RequestScoped
-public class CategoriaServiceV1 implements CategoriaResource {
+public class CategoriaServiceV2 implements CategoriaResource {
 	
 	@Inject
 	private CategoriaDomain categoria;
-	// private Categoria categoria;
-	
 	/*	
 	private CategoriaRepository repository;
 		
@@ -28,7 +26,7 @@ public class CategoriaServiceV1 implements CategoriaResource {
 		this.repository = repository;	
 	}
 	*/
-
+	
 	@Override
 	public List<CategoriaDTO> findAll() {
 		System.out.println(categoria.toString());
