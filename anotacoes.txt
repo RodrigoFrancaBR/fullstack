@@ -167,3 +167,11 @@ O Tomcat possui um JNDI somente leitura, assim o Weld não pode vincular
 
 </log4j:configuration>
 
+
+1 - Definir uma variavel de ambiente (MAVEN_HOME) (D:\rodrigo\apache-maven-3.6.3)
+para poder usar o maven via linha de comando.
+2 - Para que a linha de comando reconheça o executavel do maven é preciso que ele esteja na variavel PATH (%M2_HOME%\bin) do sistema operacional.
+
+
+jar executavel precisa de um manifest.mf
+pra que 2 objetos possam ser comparados pelo seu conteudo e nao pelo ponteiro de memoria 

@@ -1,15 +1,23 @@
-package br.com.franca.domain;
+package br.com.franca.web.api.v1.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Categoria implements Serializable {
-
+public class CategoriaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	private String nome;
 
-	public Categoria() {
+	private List<ProdutoDTO> produtos = new ArrayList<>();
+
+	public CategoriaDTO() {
+	}
+
+	public CategoriaDTO(Integer id, String nome) {
+		this.id = id;
+		this.nome = nome;
 	}
 
 	public Integer getId() {
@@ -28,6 +36,14 @@ public class Categoria implements Serializable {
 		this.nome = nome;
 	}
 
+	public List<ProdutoDTO> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<ProdutoDTO> produtos) {
+		this.produtos = produtos;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,7 +60,7 @@ public class Categoria implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		CategoriaDTO other = (CategoriaDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -55,7 +71,6 @@ public class Categoria implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
+		return "Categoria [id=" + id + ", nome=" + nome + ", produtos=" + produtos + "]";
 	}
-
 }

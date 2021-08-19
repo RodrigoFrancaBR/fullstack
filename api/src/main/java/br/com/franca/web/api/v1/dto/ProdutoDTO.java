@@ -1,15 +1,16 @@
-package br.com.franca.domain;
+package br.com.franca.web.api.v1.dto;
 
 import java.io.Serializable;
 
-public class Categoria implements Serializable {
+public class ProdutoDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	private String nome;
+	private Double preco;
 
-	public Categoria() {
+	public ProdutoDTO() {
 	}
 
 	public Integer getId() {
@@ -28,6 +29,14 @@ public class Categoria implements Serializable {
 		this.nome = nome;
 	}
 
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,7 +53,7 @@ public class Categoria implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Categoria other = (Categoria) obj;
+		ProdutoDTO other = (ProdutoDTO) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -55,7 +64,7 @@ public class Categoria implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
+		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + "]";
 	}
 
 }
