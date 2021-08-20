@@ -47,8 +47,7 @@
 			<groupId>org.glassfish.jersey.ext.cdi</groupId>
 			<artifactId>jersey-cdi1x</artifactId>
 		</dependency>
-
-
+	
 	</dependencies>
 
 </project>
