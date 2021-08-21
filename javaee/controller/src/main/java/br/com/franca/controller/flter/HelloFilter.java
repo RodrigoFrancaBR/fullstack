@@ -1,4 +1,4 @@
-package br.com.franca.web.filter;
+package br.com.franca.controller.flter;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -13,12 +13,12 @@ import javax.servlet.ServletResponse;
  */
 public class HelloFilter implements Filter {
 
-	/**
-	 * Default constructor.
-	 */
-	public HelloFilter() {
-		System.out.println("Criação do HelloFilter.");
-	}
+    /**
+     * Default constructor. 
+     */
+    public HelloFilter() {
+    	System.out.println("Criação do HelloFilter.");
+    }
 
 	/**
 	 * @see Filter#destroy()
@@ -30,9 +30,7 @@ public class HelloFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
-		
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		long tempoInicial = System.currentTimeMillis();
 
 		chain.doFilter(request, response);
@@ -49,7 +47,7 @@ public class HelloFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("init");
+		// TODO Auto-generated method stub
 	}
 
 }
