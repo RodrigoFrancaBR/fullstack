@@ -12,9 +12,8 @@ import br.com.franca.api.v1.resources.CategoriaResource;
 import br.com.franca.business.CategoriaBusiness;
 import br.com.franca.repository.domain.Categoria;
 
-public class CategoriaControllerV1 implements CategoriaResource {
-	
-	private static final Logger LOG = Logger.getLogger(CategoriaControllerV1.class.getName());
+public class CategoriaControllerV1 implements CategoriaResource {		
+	private Logger LOG;
 
 	private CategoriaBusiness business;
 
@@ -22,17 +21,16 @@ public class CategoriaControllerV1 implements CategoriaResource {
 	}
 	
 	@Inject
-	public CategoriaControllerV1(CategoriaBusiness business) {
+	public CategoriaControllerV1(Logger LOG, CategoriaBusiness business) {
+		this.LOG = LOG;
 		this.business = business;
 	}
 
 	@Override
-	public List<CategoriaDTO> findAll() {
-		
+	public List<CategoriaDTO> findAll() {		
 		LOG.log(Level.INFO, "----------------------findAll::BEGIN--------------------------------");			
 
 		List<Categoria> categorias = business.findAll();
-		// categorias.forEach(e -> System.out.println("id: " + e.getId() + "nome: " + e.getNome()));
 		categorias.forEach(e -> LOG.log(Level.INFO, "categoria: " + e.toString()));
 		
 		// converter para dto
@@ -41,8 +39,7 @@ public class CategoriaControllerV1 implements CategoriaResource {
 		categoriaDTO.setNome("CategoriDTOV1");
 
 		List<CategoriaDTO> categoriasDTO = new ArrayList<CategoriaDTO>();		
-		categoriasDTO.add(categoriaDTO);
-		
+		categoriasDTO.add(categoriaDTO);		
 		categoriasDTO.forEach(e -> LOG.log(Level.INFO, "categoriaDTO: " + e.toString()));
 		
 		LOG.log(Level.INFO, "----------------------findAll::END--------------------------------");

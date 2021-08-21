@@ -1,14 +1,15 @@
 package br.com.franca.controller.factory;
 
 import java.lang.reflect.Member;
-import java.lang.reflect.Type;
+import java.util.logging.Logger;
 
-import javax.enterprise.inject.spi.Annotated;
-import javax.enterprise.inject.spi.Bean;
+import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 public class LogFactory {
-	public String factory(InjectionPoint injectionPoint) {
+	
+	@Produces
+	public Logger factory(InjectionPoint injectionPoint) {
 		Member member = injectionPoint.getMember();
 		Class<?> declaringClass = member.getDeclaringClass();
 		String name = declaringClass.getName();
@@ -19,6 +20,6 @@ public class LogFactory {
 		Annotated annotated = injectionPoint.getAnnotated();
 		injectionPoint.isDelegate();
 		injectionPoint.isTransient();*/
-		return name;
+		return Logger.getLogger(name);
 	}
 }

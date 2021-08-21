@@ -1,11 +1,6 @@
 package br.com.franca.controller.factory;
 
-import java.lang.reflect.Member;
-import java.lang.reflect.Type;
-
 import javax.enterprise.inject.Produces;
-import javax.enterprise.inject.spi.Annotated;
-import javax.enterprise.inject.spi.Bean;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 import br.com.franca.business.CategoriaBusiness;
@@ -16,13 +11,12 @@ public class BusinessFactory {
 	
 	@Produces
 	public CategoriaBusiness factory(InjectionPoint injectionPoint) {
-		Member member = injectionPoint.getMember();
+		/*Member member = injectionPoint.getMember();
 		Type type = injectionPoint.getType();
 		Bean<?> bean = injectionPoint.getBean();
 		Annotated annotated = injectionPoint.getAnnotated();
 		injectionPoint.isDelegate();
-		injectionPoint.isTransient();
-		// return new CategoriaBusiness();
+		injectionPoint.isTransient();*/
 		return new CategoriaBusinessImplementationV1(new CategoriaRepositoryImplements());
 	}
 }
