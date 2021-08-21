@@ -9,26 +9,14 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>service</artifactId>
-	<packaging>war</packaging>
+	<artifactId>business</artifactId>
+	<packaging>jar</packaging>
 
 	<dependencies>
-<!-- 
-		<dependency>
-			<groupId>br.com.franca</groupId>
-			<artifactId>domain</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
- -->
+
 		<dependency>
 			<groupId>br.com.franca</groupId>
 			<artifactId>repository</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>br.com.franca</groupId>
-			<artifactId>api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -47,7 +35,7 @@
 			<groupId>org.glassfish.jersey.ext.cdi</groupId>
 			<artifactId>jersey-cdi1x</artifactId>
 		</dependency>
-	
+
 	</dependencies>
 
 </project>

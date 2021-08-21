@@ -1,34 +1,26 @@
-package br.com.franca.service.provider;
+package br.com.franca.controller.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import br.com.franca.api.v2.dto.CategoriaDTO;
 import br.com.franca.api.v2.resources.CategoriaResource;
-import br.com.franca.repository.CategoriaRepository;
+import br.com.franca.business.CategoriaBusiness;
 import br.com.franca.repository.domain.Categoria;
 
-@RequestScoped
-public class CategoriaServiceV2 implements CategoriaResource {
-	
-	private CategoriaRepository repository;
-	
+public class CategoriaControllerV2 implements CategoriaResource {
+
 	@Inject
-	public CategoriaServiceV2(CategoriaRepository repository) {
-		this.repository = repository;		
-	}
+	private CategoriaBusiness business;
 
 	@Override
 	public List<CategoriaDTO> findAll() {
-		
-		System.out.println("CategoriaServiceV2 :: findAll :: BEGIN");
+		System.out.println("CategoriaControllerV2 :: findAll :: BEGIN");
 
-		List<Categoria> categorias = repository.findAll();
-
-		categorias.forEach(e -> System.out.println(e.toString()));
+		List<Categoria> categorias = business.findAll();
+		categorias.forEach(e -> System.out.println("id: " + e.getId() + "nome: " + e.getNome()));
 
 		CategoriaDTO categoriaDTO = new CategoriaDTO();
 		categoriaDTO.setId(2);
@@ -37,6 +29,7 @@ public class CategoriaServiceV2 implements CategoriaResource {
 		List<CategoriaDTO> categoriasDTO = new ArrayList<CategoriaDTO>();
 
 		categoriasDTO.add(categoriaDTO);
+
 		return categoriasDTO;
 	}
 

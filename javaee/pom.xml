@@ -14,9 +14,10 @@
 	</properties>
 
 	<modules>
-		<module>api</module>
-		<module>service</module>
-		<module>repository</module>		
+		<module>api</module>		
+		<module>repository</module>
+		<module>controller</module>
+		<module>business</module>
 	</modules>
 
 	<dependencyManagement>

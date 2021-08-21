@@ -13,7 +13,7 @@
 	<description>Repositorio para o projeto java ee</description>
 
 	<dependencies>
-<!-- 
+ 
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
@@ -33,7 +33,7 @@
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
 	</dependency>
-	 -->				 
+	 				 
 			
 	</dependencies>
 
