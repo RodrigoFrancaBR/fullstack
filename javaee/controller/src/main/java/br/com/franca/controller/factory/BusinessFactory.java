@@ -1,4 +1,4 @@
-package br.com.franca.controller.config;
+package br.com.franca.controller.factory;
 
 import java.lang.reflect.Member;
 import java.lang.reflect.Type;
@@ -13,6 +13,7 @@ import br.com.franca.business.CategoriaBusinessImplementationV1;
 import br.com.franca.repository.CategoriaRepositoryImplements;
 
 public class BusinessFactory {
+	
 	@Produces
 	public CategoriaBusiness factory(InjectionPoint injectionPoint) {
 		Member member = injectionPoint.getMember();
@@ -21,7 +22,7 @@ public class BusinessFactory {
 		Annotated annotated = injectionPoint.getAnnotated();
 		injectionPoint.isDelegate();
 		injectionPoint.isTransient();
-
+		// return new CategoriaBusiness();
 		return new CategoriaBusinessImplementationV1(new CategoriaRepositoryImplements());
 	}
 }

@@ -2,28 +2,34 @@ package br.com.franca.repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.enterprise.context.RequestScoped;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import br.com.franca.repository.domain.Categoria;
 
-@RequestScoped
 public class CategoriaRepositoryImplements implements CategoriaRepository {
+
+	private static final Logger LOG = Logger.getLogger(CategoriaRepositoryImplements.class.getName());
 
 	public CategoriaRepositoryImplements() {
 	}
 
 	@Override
 	public List<Categoria> findAll() {
-
-		System.out.println("CategoriaRepositoryImplements :: findAll :: BEGIN");
+		LOG.log(Level.INFO, "----------------------findAll::BEGIN--------------------------------");		
 
 		Categoria categoria = new Categoria();
+		
 		categoria.setId(1);
 		categoria.setNome("CATEGORIA_DOMAIN");
+		
 		List<Categoria> categorias = new ArrayList<Categoria>();
+		
 		categorias.add(categoria);
 
+		categorias.forEach(e -> LOG.log(Level.INFO, "categoria: " + e.toString()));
+
+		LOG.log(Level.INFO, "----------------------findAll::END--------------------------------");
 		return categorias;
 	}
 

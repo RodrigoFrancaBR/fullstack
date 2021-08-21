@@ -30,4 +30,9 @@ public class CategoriaDTO {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return "CategoriaDTO [id=" + id + ", nome=" + nome + "]";
+	}
+
 }

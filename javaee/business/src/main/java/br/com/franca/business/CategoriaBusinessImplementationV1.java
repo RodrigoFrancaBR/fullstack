@@ -1,37 +1,35 @@
 package br.com.franca.business;
 
 import java.util.List;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import br.com.franca.repository.CategoriaRepository;
 import br.com.franca.repository.domain.Categoria;
 
-@RequestScoped
 public class CategoriaBusinessImplementationV1 implements CategoriaBusiness {
+	private static final Logger LOG = Logger.getLogger(CategoriaBusinessImplementationV1.class.getName());
 	
 	private CategoriaRepository repository;
 
 	public CategoriaBusinessImplementationV1() {
 	}
-	
-	@Inject
+
 	public CategoriaBusinessImplementationV1(CategoriaRepository repository) {
 		this.repository = repository;
-	}
-	
-	@PostConstruct
-	public void init(){
-		System.out.println("Iniciando o CategoriaBusinessImplementation ");
-	}
+	}	
 
 	@Override
 	public List<Categoria> findAll() {
-		System.out.println("CategoriaBusinessImplementation :: findAll :: BEGIN");
+		
+		LOG.log(Level.INFO, "----------------------findAll::BEGIN--------------------------------");
+		
+		// alguma regra de negócio diferente da versão 2
 		List<Categoria> categorias = repository.findAll();
-		categorias.forEach(e -> System.out.println("id: " + e.getId() + "nome: " + e.getNome()));
+		
+		categorias.forEach(e -> LOG.log(Level.INFO, "categoria: " + e.toString()));
+		
+		LOG.log(Level.INFO, "----------------------findAll::END--------------------------------");
 		return categorias;
 	}
 

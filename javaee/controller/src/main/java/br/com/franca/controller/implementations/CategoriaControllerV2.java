@@ -15,6 +15,13 @@ public class CategoriaControllerV2 implements CategoriaResource {
 	@Inject
 	private CategoriaBusiness business;
 
+	public CategoriaControllerV2() {
+	}
+
+	public CategoriaControllerV2(CategoriaBusiness business) {
+		this.business = business;
+	}
+
 	@Override
 	public List<CategoriaDTO> findAll() {
 		System.out.println("CategoriaControllerV2 :: findAll :: BEGIN");
