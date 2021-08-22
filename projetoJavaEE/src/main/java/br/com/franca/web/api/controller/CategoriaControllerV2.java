@@ -1,4 +1,4 @@
-package br.com.franca.web.api.implementations;
+package br.com.franca.web.api.controller;
 
 import java.util.ArrayList;
 import java.util.List;
