@@ -8,6 +8,6 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class JaxRsApplication extends ResourceConfig {
 	
 	public JaxRsApplication() {
-		packages("br.com.franca.web.api");
+		packages("br.com.franca.web.api.implementations");
 	}
 }
