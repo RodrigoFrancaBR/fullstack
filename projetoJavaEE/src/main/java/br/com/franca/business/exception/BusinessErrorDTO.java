@@ -1,4 +1,4 @@
-package br.com.franca.web.api.controller.exception.dto;
+package br.com.franca.business.exception;
 
 import java.net.URI;
 
@@ -6,7 +6,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class StandardErrorDTO {
+public class BusinessErrorDTO {
 
 	private String message;
 	private String error;
@@ -14,11 +14,11 @@ public class StandardErrorDTO {
 	private Status status;
 	private long currentTimeMillis;
 
-	public StandardErrorDTO() {
+	public BusinessErrorDTO() {
 		super();
 	}
 
-	public StandardErrorDTO(String message, String error, URI requestUri, Status status, long currentTimeMillis) {
+	public BusinessErrorDTO(String message, String error, URI requestUri, Status status, long currentTimeMillis) {
 		super();
 		this.message = message;
 		this.error = error;

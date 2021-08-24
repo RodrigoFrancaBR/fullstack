@@ -12,14 +12,11 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
-import javax.ws.rs.core.Response.Status;
 
 import org.apache.commons.logging.Log;
 
 import br.com.franca.business.CategoriaBusiness;
-import br.com.franca.business.Prioridade;
 import br.com.franca.domain.Categoria;
-import br.com.franca.web.api.controller.exception.RestException;
 import br.com.franca.web.api.v1.dto.CategoriaDTO;
 import br.com.franca.web.api.v1.interfaces.CategoriaAPI;
 

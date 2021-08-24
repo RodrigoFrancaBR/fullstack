@@ -9,9 +9,9 @@ import javax.ws.rs.core.Application;
 
 import org.apache.commons.logging.Log;
 
+import br.com.franca.business.exception.BusinessRuleMapper;
 import br.com.franca.web.api.controller.CategoriaControllerV1;
 import br.com.franca.web.api.controller.CategoriaControllerV2;
-import br.com.franca.web.api.controller.exception.ControllerExceptionHandler;
 
 @ApplicationPath("/jersey")
 public class JaxRsApplication extends Application {
@@ -29,7 +29,7 @@ public class JaxRsApplication extends Application {
 	
 	resources.add(CategoriaControllerV1.class);
 	resources.add(CategoriaControllerV2.class);
-	resources.add(ControllerExceptionHandler.class);
+	resources.add(BusinessRuleMapper.class);
 	
 	return resources;
 	 
