@@ -31,7 +31,7 @@ public class CategoriaBusinessImplementationV1 implements CategoriaBusiness {
 	@Override
 	public List<Categoria> findAll() {
 		LOG.info("----------------------findAll::BEGIN--------------------------------");
-
+		
 		List<Categoria> categorias = repository.findAll();
 		
 		if (categorias!=null){
